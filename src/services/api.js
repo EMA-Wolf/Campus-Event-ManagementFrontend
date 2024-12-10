@@ -1,6 +1,5 @@
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
 // Base URL for API requests
 const baseURL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3000";
 
@@ -46,11 +45,10 @@ export const login = async (details) => {
     // console.log(userDetails)
     localStorage.setItem("token", token); // Store token in localStorage
     localStorage.setItem("User", JSON.stringify(userDetails)); // Return user data
-    const navigate = useNavigate();
     if (userDetails.role === "admin") {
-      navigate("/admin");
+      window.location.replace(`${window.location.origin}/admin`)
     } else {
-      navigate("/home");
+      window.location.replace(`${window.location.origin}/home`)
     }
   } catch (error) {
     console.error("Login error:", error);
