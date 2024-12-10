@@ -8,7 +8,9 @@ const [user,setUser] = useState({})
 
 useEffect(()=>{
   const user = localStorage.getItem("User")
-  setUser(JSON.parse(user))
+  if(user){
+    setUser(JSON.parse(user))
+  }
 },[])
 
   const handleRsvp = () => {
@@ -32,7 +34,7 @@ useEffect(()=>{
     <p className='text-white'>Location: {event.location}</p>
     <p className='text-white'>Available Seats: {event.available_seats}</p>
     <p className='text-white'>Type: {event.type}</p>
-    <button disabled={event.available_seats === 0 || user.role === "admin"} onClick={handleRsvp} className="bg-transparent text-cyan-300 px-4 py-2 mt-2 rounded-md border border-sky-300 hover:bg-cyan-300 hover:text-white">{event.available_seats === 0 ? "No Seats Available" : "RSVP"}</button>
+    <button disabled={event.available_seats === 0 || user?.role === "admin"} onClick={handleRsvp} className="bg-transparent text-cyan-300 px-4 py-2 mt-2 rounded-md border border-sky-300 hover:bg-cyan-300 hover:text-white">{event.available_seats === 0 ? "No Seats Available" : "RSVP"}</button>
   </div>
   )
 }

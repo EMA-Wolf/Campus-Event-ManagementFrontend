@@ -7,10 +7,7 @@ import { logout } from '../services/api';
 
 const NavBar = () => {
     useEffect(() => {
-        const user = localStorage.getItem("User")
-        if(user){
-            setUser(JSON.parse(user))
-        }
+        setUser(JSON.parse(localStorage.getItem("User")))
     }, [])
     // const [test, setTest] = useState(true)
     const [user, setUser] = useState({})
