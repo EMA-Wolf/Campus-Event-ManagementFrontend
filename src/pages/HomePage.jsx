@@ -11,7 +11,10 @@ import { Hourglass } from 'react-loader-spinner'
 const HomePage = () => {
 
     useEffect(() => {
-        verifyToken();
+        const token = localStorage.getItem("token");
+        if (token) {
+            verifyToken();
+        }
         getAllEvents();
     }, []);
 
@@ -73,6 +76,7 @@ const HomePage = () => {
                             wrapperClass=""
                                 colors={['#306cce', '#72a1ed']}
                             /></div> : events.length === 0 ? <p className=' text-center uppercase font-bold text-white text-2xl'>No events found.</p> : events
+                                .slice(0, 4)
                                 .map((event, index) => (
                                     <EventCards key={index} event={event} />
                                 ))

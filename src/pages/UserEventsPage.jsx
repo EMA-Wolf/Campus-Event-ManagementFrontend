@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import NavBar from '../components/NavBar';
 import { Hourglass } from 'react-loader-spinner';
 import api, { verifyToken } from '../services/api';
-import { useNavigate } from 'react-router-dom';
 import UserRsvpEventCards from '../components/UserRsvpEventCards';
 import CancelDialoguebox from '../components/CancelDialoguebox';
 import { toast } from 'react-toastify';
+
 const UserEventsPage = () => {
-    const navigate = useNavigate();
     const [user, setUser] = useState({});
     const [isLoading, setIsLoading] = useState(false);
     const [isDeleted, setIsDeleted] = useState(false);

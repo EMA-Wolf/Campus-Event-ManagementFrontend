@@ -6,8 +6,13 @@ import { Hourglass } from 'react-loader-spinner';
 import { verifyToken } from '../services/api'
 const AdminPage = () => {
     const [events, setEvents] = useState([]);
+    const [user,setUser] = useState({})
 
     useEffect(() => {
+        const user = localStorage.getItem("User")
+        if(user){
+            setUser(JSON.parse(user))
+        }
         verifyToken();
         getAllEvents();
     }, []);
@@ -44,7 +49,7 @@ const AdminPage = () => {
                                 wrapperClass=""
                                 colors={['#306cce', '#72a1ed']}
                             /> : events.length === 0 ? <p className='text-center uppercase font-bold text-white text-2xl'>No events found.</p> : events
-                                .filter(event => new Date(event.event_date) >= new Date())
+                                .filter(event => new Date(event.event_date) >= new Date() && user.preferences.includes(event.type))
                                 .map((event, index) => (
                                     <EventCards key={index} event={event} />
                                 ))

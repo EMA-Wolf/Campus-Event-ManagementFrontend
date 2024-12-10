@@ -21,6 +21,14 @@ The Campus Event Management Hub is a web application designed to streamline even
 - **State Management**: React Hooks
 - **HTTP Client**: Axios
 
+## Backend Repository
+
+You can find the backend repository for this project at: [Backend Repo Link](https://github.com/EMA-Wolf/Campus-Event-ManagementBackend)
+
+## Deployed Project
+
+The project is deployed and can be accessed at: [Deployed Project Link](https://campus-event-management-hub.netlify.app/)
+
 ## Project Structure
 
 ### Frontend
@@ -96,6 +104,11 @@ The Campus Event Management Hub is a web application designed to streamline even
 - **Login**: Access your account to manage and RSVP for events.
 - **Admin Features**: Admins can create and manage events through the admin dashboard.
 - **RSVP**: Users can RSVP for events and view their upcoming events.
+
+## Admin Details
+
+- **Email**: Arnold@example.com
+- **Password**: test
 
 ## Contributing
 

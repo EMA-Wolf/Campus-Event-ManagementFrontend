@@ -66,7 +66,7 @@ const Dashboard = () => {
                         <p className='text-white'>No events found.</p>
                     ) : (
                             events
-                                .filter(event => user.preferences.includes(event.type))
+                                .filter(event => user.preferences.includes(event.type) && new Date(event.event_date) >= new Date())
                                 .map((event, index) => (
                                     <EventCards key={index} event={event} />
                                 ))
