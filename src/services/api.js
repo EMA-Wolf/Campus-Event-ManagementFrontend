@@ -42,7 +42,7 @@ export const login = async (details) => {
     const response = await api.post("/api/auth/login", details);
     const { token, userDetails } = response.data;
 
-    console.log(userDetails)
+    // console.log(userDetails)
     localStorage.setItem("token", token); // Store token in localStorage
     localStorage.setItem("User", JSON.stringify(userDetails)); // Return user data
     if (userDetails.role === "admin") {
@@ -52,7 +52,7 @@ export const login = async (details) => {
     }
   } catch (error) {
     console.error("Login error:", error);
-    alert(error.response?.data?.error || "Login failed.");
+    toast.error(error.response?.data?.error || "Login failed.");
     throw error;
   }
 };
@@ -64,7 +64,7 @@ export const signup = async (details) => {
     return await login(details); // Automatically log in user
   } catch (error) {
     console.error("Signup error:", error);
-    alert(error.response?.data?.error || "Signup failed.");
+    toast.error(error.response?.data?.error || "Signup failed.");
     throw error;
   }
 };
