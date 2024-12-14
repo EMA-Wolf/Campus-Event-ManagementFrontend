@@ -27,7 +27,10 @@ You can find the backend repository for this project at: [Backend Repo Link](htt
 
 ## Deployed Project
 
-The project is deployed and can be accessed at: [Deployed Project Link](https://campus-event-management-hub.netlify.app/)
+The project is deployed and can be accessed at:
+- Link 1: [Deployed Frontend Link 1](https://c-e-m.vercel.app/)
+- Link 2: [Deployed Frontend Link 2](https://c-e-m.netlify.app/)
+
 
 ## Project Structure
 
